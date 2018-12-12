@@ -1,0 +1,15 @@
+image: t3easy/surf:gulp-node8.9
+
+pipelines:
+  branches:
+    stage:
+      - step:
+          script: # Upload fileadmin content, import DB, .env file. Then modify below and comment out.
+            - php -v
+            - php surf.phar deploy stage -vv
+#    master:
+#      - step:
+#          script: # Upload fileadmin content, import DB, .env file. Then modify below and comment out.
+#            - rsync -vzrS --exclude=".*" --exclude="node_modules" --exclude="publish.sh"  ./ p12345@p12345.mittwaldserver.info:/html/typo3
+#            - php surf.phar deploy master
+
