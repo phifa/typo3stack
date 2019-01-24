@@ -1,4 +1,4 @@
-image: t3easy/surf:gulp-node8.9
+image: t3easy/surf:next
 
 pipelines:
   branches:

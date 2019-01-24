@@ -46,7 +46,6 @@ if (\TYPO3\CMS\Core\Utility\GeneralUtility::getApplicationContext()->isProductio
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['enable_DLOG'] = 0; //  Boolean: Whether the developer log is enabled. See constant "TYPO3_DLOG"
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['systemLog'] = ''; //  Time
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['systemLogLevel'] = 4; //  Integer (0, 1, 2, 3, 4): Only messages with same or higher severity are logged.
-    $GLOBALS['TYPO3_CONF_VARS']['SYS']['enableDeprecationLog'] = ''; //  file, devlog, console
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['displayErrors'] = 0;
 
 }
@@ -66,7 +65,6 @@ if (\TYPO3\CMS\Core\Utility\GeneralUtility::getApplicationContext()->isDevelopme
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['enable_DLOG'] = 1; //  Boolean: Whether the developer log is enabled. See constant "TYPO3_DLOG"
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['systemLog'] = 'error_log';
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['systemLogLevel'] = 1; //  Integer (0, 1, 2, 3, 4): Only messages with same or higher severity are logged.
-    $GLOBALS['TYPO3_CONF_VARS']['SYS']['enableDeprecationLog'] = 'file'; //  file, devlog, console
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['displayErrors'] = 1;
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['exceptionalErrors'] = '28674';
 }
