@@ -27,6 +27,10 @@ The [MOUNT] group is to limit the shown content through given entrypoints in the
 Mounts DB access to the root page. Add more [MOUNT] groups for granular access.
 **Note:** DB Mounts make the pagetree(s) generally available. Use the [ACCESS] groups to control the details.
 
+### [MOUNT] fileadmin
+
+Mounts file mount: `fileadmin`
+
 # CORE
 
 The [CORE] group defines permissions for core-related areas. E.g. if you want to change access to the filelist module, have a look at `[CORE] Files`.
@@ -41,40 +45,40 @@ The [CORE] group defines permissions for core-related areas. E.g. if you want to
 ##### Page Content
 
 - ❌ Access (fe_group)
-- ❌ Align (header_position)
+- ✅ Align (header_position)
 - ✅ Border (imageborder)
 - ✅ Categories (categories)
 - ✅ Click-enlarge (image_zoom)
-- ❌ Columns (colPos)
+- ✅ Columns (colPos)
 - ✅ Columns (imagecols)
 - ✅ Date (date)
 - ✅ Description (rowDescription)
-- ❌ Display description (uploads_description)
-- ❌ Display file/icon/thumbnail (uploads_type)
-- ❌ Field Delimiter (table_delimiter)
-- ❌ File collections (file_collections)
-- ❌ Frame (frame_class)
+- ✅ Display description (uploads_description)
+- ✅ Display file/icon/thumbnail (uploads_type)
+- ✅ Field Delimiter (table_delimiter)
+- ✅ File collections (file_collections)
+- ✅ Frame (frame_class)
 - ✅ Height (pixels) (imageheight)
 - ✅ Index (sectionIndex)
-- ❌ Language (sys_language_uid)
+- ✅ Language (sys_language_uid)
 - ✅ Layout (layout)
 - ✅ Link (header_link)
 - ✅ Position (imageorient)
 - ❌ Recursive (recursive)
 - ❌ Restrict editing by non-Admins (editlock)
-- ❌ Show File Size (filelink_size)
-- ❌ Sort file list (filelink_sorting)
-- ❌ Sorting direction (filelink_sorting_direction)
-- ❌ Space After (space_after_class)
-- ❌ Space Before (space_before_class)
+- ✅ Show File Size (filelink_size)
+- ✅ Sort file list (filelink_sorting)
+- ✅ Sorting direction (filelink_sorting_direction)
+- ✅ Space After (space_after_class)
+- ✅ Space Before (space_before_class)
 - ✅ Start (starttime)
 - ❌ Startingpoint (pages)
 - ✅ Stop (endtime)
 - ✅ Subheader (subheader)
-- ❌ Table caption (table_caption)
-- ❌ Table header position (table_header_position)
-- ❌ Table style (table_class)
-- ❌ Text enclosure (table_enclosure)
+- ✅ Table caption (table_caption)
+- ✅ Table header position (table_header_position)
+- ✅ Table style (table_class)
+- ✅ Text enclosure (table_enclosure)
 - ✅ To top (linkToTop)
 - ✅ Transl.Orig (l18n_parent)
 - ✅ Type (header_layout)
@@ -88,12 +92,12 @@ The [CORE] group defines permissions for core-related areas. E.g. if you want to
 - Includes `[CORE] Content (Read)`
 - Enable module **Web>Recycler**
 - Tables (modify): `Page Content (tt_content)`, `Note (sys_note)`
+- Explicitly allow/deny field values: All Page Content: Types
 
 ### [CORE] Files
 
-- Includes Basic File Mount `Files for Editors` for fileadmin `/` access
 - Enable module **File>Filelist**
-- Tables (modify): `File`
+- Tables (modify): `sys_file`, `sys_file_reference`, `sys_file_collection`, `sys_file_metadata`, `sys_file_storage`
 
 * ✅ Directory: Read
 * ✅ Directory: Write
@@ -224,7 +228,7 @@ _Includes TsConfig Backend Configuration for admins:_
 
 ### [ROLE] Editor (Abstract)
 
-This is the default editor. It includes everything neccessary to set up a basic editor. It is still an abstraction group and won't work on its own, because of the missing DB `[MOUNT]` and missing `[LANG]` groups.
+This is the default editor. It includes everything neccessary to set up a basic editor. It is still an abstraction group and won't work on its own, because of the missing `[MOUNT]` and missing `[LANG]` groups.
 
 _Includes TsConfig Backend Configuration for editors:_
 
@@ -248,9 +252,11 @@ No (Read) groups are included here. (Read) groups are included in the (Write) gr
 
 - Includes `[ROLE] Editor (Abstract)`
 - Includes `[MOUNT] Root Default Page`
+- Includes `[MOUNT] fileadmin`
 
 ### [ROLE] Editor / Language (Default) / Root Default Page
 
 - Includes `[ROLE] Editor (Abstract)`
 - Includes `[MOUNT] Root Default Page`
+- Includes `[MOUNT] fileadmin`
 - Includes `[LANG] Limit to Default`
