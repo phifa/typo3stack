@@ -48,6 +48,7 @@ http://template.ddev.local:8036
 1. Now the child template needs to be added again in two places in the backend: Add the TypoScript Template and the TSconfig to the Root Page. You might have to set the Backend Layout (and Sublevels) to `Test` again on the Root Page.
 1. Modify constants of the child template accordingly. `config.name`, etc.
 1. Clear System Caches and open your dev site, e.g. `http://mydomain.localhost`. Voila!
+1. Configure sites first, with sites module.
 
 ## 3. Deployment via Bitbucket Pipeline and Surf
 
